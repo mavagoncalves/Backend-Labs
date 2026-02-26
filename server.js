@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-//control for data --> schema
+//mongoose : control for data --> schema
 const mongoose = require('mongoose');
 const taskRoutes = require('./routes/taskRoutes');
 
