@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.use('/api/tasks', taskRoutes);
 
-mongoose.connect(process.env.MONGO_URI{
+mongoose.connect(process.env.MONGO_URI, {
   family: 4 //forces Node to use standard IPv4
 })
   .then(() => {
