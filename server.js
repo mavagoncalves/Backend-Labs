@@ -3,8 +3,13 @@ const express = require('express');
 //mongoose : control for data --> schema
 const mongoose = require('mongoose');
 const taskRoutes = require('./routes/taskRoutes');
+const helmet = require('helmet');
 
 const app = express();
+
+app.use(helmet());
+app.disable('x-powered-by');
+
 app.use(express.json());
 
 app.use('/api/tasks', taskRoutes);
