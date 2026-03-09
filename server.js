@@ -12,6 +12,7 @@ app.disable('x-powered-by');
 
 app.use(express.json());
 
+app.use('/api/auth', authRoutes);
 app.use('/api/tasks', taskRoutes);
 
 mongoose.connect(process.env.MONGO_URI, {
