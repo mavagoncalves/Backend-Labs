@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Is it Friday?</title></head>
+<body style="text-align: center; margin-top: 50px; font-family: sans-serif;">
+    <a href="/">Back to Home</a>
+    
+    <h2>Current Date: <%= dateString %></h2>
+    <h3>Day of the week: <%= dayName %></h3>
+
+    <% if (isFriday) { %>
+        <h1 style="color: rgb(255, 0, 157); font-size: 5rem;">🎉 IT IS FRIDAY BABY! 🎉</h1>
+        <img src="https://media.giphy.com/media/11sBLVxNs7v6WA/giphy.gif" alt="Friday Dance">
+    <% } else { %>
+        <p style="color: gray;">It is not Friday yet... Keep working.</p>
+    <% } %>
+    
+    <hr>
+    <p>Test the route: <a href="/friday?date=2026-03-13">Force Friday (March 13, 2026)</a></p>
+</body>
+</html>
