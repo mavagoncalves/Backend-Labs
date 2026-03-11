@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head><title>All Tasks</title></head>
+<body>
+    <a href="/">Back to Home</a>
+    <h1>Task List</h1>
+
+    <% if (successMsg.length > 0) { %>
+        <div style="background-color: lightgreen; padding: 10px; border: 1px solid green; margin-bottom: 15px;">
+            <%= successMsg %>
+        </div>
+    <% } %>
+
+    <a href="/tasks/new" style="display: block; margin-bottom: 20px;">+ Create New Task</a>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Title</th>
+            <th>Completed?</th>
+            <th>Actions</th>
+        </tr>
+        <% tasks.forEach(task => { %>
+            <tr>
+                <td><a href="/tasks/<%= task._id %>"><%= task.title %></a></td>
+                <td><%= task.completed ? "Yes" : "No" %></td>
+                <td>
+                    <a href="/tasks/<%= task._id %>/edit">Edit</a>
+                    <form action="/tasks/<%= task._id %>?_method=DELETE" method="POST" style="display:inline;">
+                        <button type="submit" style="color: red;">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <% }) %>
+    </table>
+</body>
+</html>
